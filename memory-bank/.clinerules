@@ -1,0 +1,64 @@
+# FlexForge Project Rules
+
+## Project Patterns
+1. File Organization
+   - Components in src/components/
+   - Pages in src/app/
+   - Utilities in src/lib/
+   - Database schema in prisma/
+   - UI components in src/components/ui/
+
+2. Component Structure
+   - Client components marked with "use client"
+   - Server components as default
+   - Form components handle their own state
+   - UI components from shadcn/ui
+
+3. Data Flow
+   - Server actions for mutations
+   - FormData for form submissions
+   - Prisma for database operations
+   - Client state for form management
+
+## Coding Standards
+1. TypeScript
+   - Use strict type checking
+   - Define interfaces for props
+   - Use type inference where possible
+
+2. React Patterns
+   - Functional components
+   - React hooks for state
+   - Server components where possible
+   - Client components only when needed
+
+3. Styling
+   - Tailwind CSS for all styling
+   - Follow mobile-first approach
+   - Use shadcn/ui component patterns
+   - Dark mode by default
+
+## Development Workflow
+1. File Creation
+   - Follow Next.js 14 conventions
+   - Use TypeScript for all files
+   - Keep components focused
+   - Separate concerns appropriately
+
+2. Testing
+   - Manual testing for now
+   - Test all CRUD operations
+   - Verify mobile responsiveness
+   - Check dark mode rendering
+
+3. Error Handling
+   - Use try/catch blocks
+   - Provide user feedback
+   - Log errors appropriately
+   - Handle edge cases
+
+## Known Challenges
+1. Edit functionality needs special attention
+2. Form validation requires careful implementation
+3. Error handling needs consistent approach
+4. Loading states should be user-friendly
