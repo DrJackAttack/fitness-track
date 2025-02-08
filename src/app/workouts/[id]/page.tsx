@@ -9,9 +9,11 @@ export default async function WorkoutPage({
 }: {
   params: { id: string }
 }) {
+  const { id } = await Promise.resolve(params)
+  
   const workout = await prisma.workout.findUnique({
     where: {
-      id: parseInt(params.id),
+      id: parseInt(id),
     },
     include: {
       exercises: true,
@@ -25,7 +27,8 @@ export default async function WorkoutPage({
   async function deleteWorkout() {
     "use server"
     
-    const response = await fetch(`${process.env.VERCEL_URL || "http://localhost:3000"}/api/workouts/${params.id}`, {
+    const { id } = await Promise.resolve(params)
+    const response = await fetch(`${process.env.VERCEL_URL || "http://localhost:3000"}/api/workouts/${id}`, {
       method: "DELETE",
     })
 
