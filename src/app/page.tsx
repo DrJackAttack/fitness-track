@@ -42,9 +42,24 @@ export default async function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                {workout.exercises.length} exercise{workout.exercises.length === 1 ? "" : "s"}
-              </p>
+              {workout.exercises.length > 0 ? (
+                <div className="space-y-3">
+                  {workout.exercises.map((exercise) => (
+                    <div
+                      key={exercise.id}
+                      className="p-2 rounded-md border bg-muted/40 hover:bg-muted/60 transition-colors"
+                    >
+                      <h3 className="font-medium text-sm mb-1">{exercise.name}</h3>
+                      <div className="flex gap-3 text-xs text-muted-foreground">
+                        <p>{exercise.sets} sets</p>
+                        <p>{exercise.reps} reps</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground">No exercises added yet</p>
+              )}
             </CardContent>
             <CardFooter className="gap-2">
               <Button variant="outline" asChild className="flex-1">

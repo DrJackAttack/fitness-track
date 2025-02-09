@@ -59,7 +59,53 @@ model Exercise {
 - Form Components → UI Components
 - Server Actions ← Form Submissions
 
+## Form Handling Patterns
+
+1. Server-Side Form Processing
+   - Use FormData for data transfer
+   - Parse and validate form data on server
+   - Group related form fields (e.g., exercises)
+   - Return appropriate error responses
+
+2. Next.js 14 Params Handling
+   ```typescript
+   // Always await params before using
+   const { id } = await Promise.resolve(params)
+   ```
+
+3. API Route Patterns
+   - Consistent error handling
+   - Proper status codes
+   - Validation before database operations
+   - Transaction-based updates
+
+4. Form Submission
+   - Client-side validation
+   - Loading states during submission
+   - Error message display
+   - Proper HTTP methods (POST/PUT)
+
+## Current Patterns
+
+1. Data Validation
+   - Server-side required fields
+   - Client-side validation before submit
+   - Structured error responses
+   - Type checking for inputs
+
+2. Error Handling
+   - Try/catch blocks in API routes
+   - Proper error messages
+   - Status code mapping
+   - Client-side error display
+
+3. Form State Management
+   - Loading states
+   - Error states
+   - Client-side validation
+   - Dynamic form fields
+
 ## Known Issues
-- Edit functionality has runtime errors
-- Form validation needs improvement
-- Error handling needs enhancement
+- Need to implement workout categories
+- Exercise library functionality pending
+- Progress tracking to be added
