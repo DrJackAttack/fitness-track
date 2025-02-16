@@ -16,19 +16,7 @@ export default async function Home() {
 
   return (
     <main className="container mx-auto p-4 md:p-6 min-h-screen">
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-2">
-          <Dumbbell className="h-8 w-8 text-primary" />
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 text-transparent bg-clip-text">
-            FlexForge
-          </h1>
-        </div>
-        <Button asChild>
-          <Link href="/workouts/new">
-            Create Workout
-          </Link>
-        </Button>
-      </div>
+      <h1 className="text-4xl font-bold mb-8">Your Workouts</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {workouts.map((workout) => (
